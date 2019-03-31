@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# This script is responsible for getting Common Air Quality Index (AQI) and temperature from a given station basing on airly.eu sensors
-# info about Common Air Quality Index (AQI) in Poland: https://www.airqualitynow.eu/pl/about_indices_definition.php
+# This script is responsible for getting Air Quality Index (AQI) and temperature from airly.eu sensors
 
 #################
 # configuration #
