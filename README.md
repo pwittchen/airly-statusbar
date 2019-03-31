@@ -6,7 +6,7 @@ bash script for reading AQI (Air Quality Index) and temperature from the airly.e
 
 Installation
 -------------
-- install [jq](https://stedolan.github.io/jq/) command line tool (it's used in the script)
+- install [jq](https://stedolan.github.io/jq/) and [curl](https://curl.haxx.se/) if you don't have them
 - get your airly.eu api key at https://developer.airly.eu/docs
 - configure your sensor id and api key inside the script
 - if you're on Linux, install [Argos](https://github.com/p-e-w/argos) and copy the script into the `~/.config/argos` directory
