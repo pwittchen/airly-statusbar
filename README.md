@@ -6,6 +6,7 @@ bash script for reading AQI (Air Quality Index) and temperature from the airly.e
 
 Installation
 -------------
+- install [jq](https://stedolan.github.io/jq/) command line tool (it's used in the script)
 - get your airly.eu api key at https://developer.airly.eu/docs
 - configure your sensor id and api key inside the script
 - if you're on Linux, install [Argos](https://github.com/p-e-w/argos) and copy the script into the `~/.config/argos` directory
@@ -17,4 +18,5 @@ References
 - https://developer.airly.eu/docs
 - https://github.com/p-e-w/argos
 - https://getbitbar.com/
+- https://stedolan.github.io/jq/
 - http://wittchen.io/2017/12/29/air-quality-monitoring-script-for-argos-linux-and-bitbar-macos/
