@@ -2,6 +2,8 @@ airly.sh
 =========
 bash script for reading AQI (Air Quality Index) and temperature from the airly.eu sensors for BitBar (macOS) and Argos (Linux) top panels
 
+![screenshot](screenshot.png)
+
 Installation
 -------------
 - get your airly.eu api key at https://developer.airly.eu/docs
