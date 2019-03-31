@@ -9,7 +9,7 @@ Installation
 - install [jq](https://stedolan.github.io/jq/) and [curl](https://curl.haxx.se/) if you don't have them
 - get your airly.eu api key at https://developer.airly.eu/docs
 - configure your sensor id and api key inside the script
-- if you're on Linux, install [Argos](https://extensions.gnome.org/extension/1176/argos) and copy the script into the `~/.config/argos` directory
+- if you're on Linux (with Gnome WM), install [Argos](https://extensions.gnome.org/extension/1176/argos) and copy the script into the `~/.config/argos` directory
 - if you're on macOS, install [BitBar](https://getbitbar.com/) and copy the script into your defined BitBar directory
 
 References
