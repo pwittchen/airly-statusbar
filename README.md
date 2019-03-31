@@ -8,8 +8,8 @@ Installation
 -------------
 - get your airly.eu api key at https://developer.airly.eu/docs
 - configure your sensor id and api key inside the script
-- if you're on Linux, install Argos and copy the script into the `~/.config/argos` directory
-- if you're on macOS, install BitBar and copy the script into your defined BitBar directory
+- if you're on Linux, install [Argos](https://github.com/p-e-w/argos) and copy the script into the `~/.config/argos` directory
+- if you're on macOS, install [BitBar](https://getbitbar.com/) and copy the script into your defined BitBar directory
 
 References
 ----------
