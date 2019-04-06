@@ -11,6 +11,7 @@ Installation
 - configure your sensor id and api key inside the script
 - if you're on Linux (with Gnome WM), install [Argos](https://extensions.gnome.org/extension/1176/argos) and copy the script into the `~/.config/argos` directory
 - if you're on macOS, install [BitBar](https://getbitbar.com/) and copy the script into your defined BitBar directory
+- configure script refresh rate by renaming the script (default is 300 seconds = 5 minutes)
 
 References
 ----------
