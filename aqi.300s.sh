@@ -9,6 +9,9 @@
 SENSOR_ID="526"         # customize your sensor id here
 API_KEY="YOUR_API_KEY"  # put your api key here
 
+# get your sensor id with the following call:
+# https://airapi.airly.eu/v2/installations/nearest?lat=YOUR_LAT&lng=YOUR_LNG&maxDistanceKM=5&maxResults=3'
+
 #################
 
 URL="https://airapi.airly.eu/v2/measurements/installation?installationId=$SENSOR_ID"
