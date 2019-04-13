@@ -21,14 +21,14 @@ AQI=$(curl -X GET \
     --header "$TYPE" \
     --header "$API_KEY_HEADER" \
     "$URL" \
-    | jq .current | jq .indexes | grep value | awk '{print $2}' | cut -f1 -d"." | cut -f1 -d",")
+    | jq .current.indexes | jq '.[0]'.value | cut -f1 -d"." | cut -f1 -d",")
 
 TMP=$(curl -X GET \
     --silent \
     --header "$TYPE" \
     --header "$API_KEY_HEADER" \
     "$URL" \
-    | jq .current | jq .values | jq last | grep value | awk '{print $2}')
+    | jq .current.values | jq last.value)
 
 MSG="Unknown"
 
