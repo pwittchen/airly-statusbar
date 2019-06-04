@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script is responsible for getting Air Quality Index (AQI) and temperature from airly.eu sensors
+# This script is responsible for getting Air Quality Index (AQI) from airly.eu sensors
 
 #################
 # configuration #
@@ -26,13 +26,6 @@ AQI=$(curl -X GET \
     "$URL" \
     | jq .current.indexes | jq '.[0]'.value | cut -f1 -d"." | cut -f1 -d",")
 
-TMP=$(curl -X GET \
-    --silent \
-    --header "$TYPE" \
-    --header "$API_KEY_HEADER" \
-    "$URL" \
-    | jq .current.values | jq last.value)
-
 MSG="Unknown"
 
 case 1 in
@@ -46,5 +39,5 @@ esac
 if [ "$AQI" == "null" ]; then
     echo "AQI sensor is off"
 else
-    echo "AQI $AQI ($MSG) $TMP°C"
+    echo "AQI $AQI ($MSG)"
 fi
