@@ -1,6 +1,6 @@
 airly-statusbar
 ===============
-bash script for reading AQI (Air Quality Index) from the airly.eu sensors for BitBar (macOS) and Argos (Linux) statusbar
+bash script for reading AQI (Air Quality Index) from the airly.eu sensors for BitBar (macOS) and Argos (Linux + Gnome) statusbar
 
 ![screenshot](screenshot.png)
 
