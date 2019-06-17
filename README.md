@@ -8,7 +8,8 @@ Installation
 -------------
 - install [jq](https://stedolan.github.io/jq/) and [curl](https://curl.haxx.se/) if you don't have them
 - get your airly.eu api key at https://developer.airly.eu/docs
-- configure your sensor id and api key inside the script
+- configure your `SENSOR_ID` and `API_KEY` inside the `.aqi.conf` file
+- copy `.aqi.conf` file into `.config/scripts/aqi.conf` location (if you want to have different location, customize it in the bash script)
 - if you're on Linux (with Gnome WM), install [Argos](https://extensions.gnome.org/extension/1176/argos) and copy the script into the `~/.config/argos` directory
 - if you're on macOS, install [BitBar](https://getbitbar.com/) and copy the script into your defined BitBar directory
 - configure script refresh rate by renaming the script (default is 300 seconds = 5 minutes)
