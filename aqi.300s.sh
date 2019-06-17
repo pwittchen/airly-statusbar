@@ -1,43 +1,49 @@
 #!/usr/bin/env bash
 
-# This script is responsible for getting Air Quality Index (AQI) from airly.eu sensors
-
-#################
-# configuration #
-#################
-
-SENSOR_ID="526"         # customize your sensor id here
-API_KEY="YOUR_API_KEY"  # put your api key here
-
-# get your sensor id with the following call:
-# https://airapi.airly.eu/v2/installations/nearest?lat=YOUR_LAT&lng=YOUR_LNG&maxDistanceKM=5&maxResults=3'
-
-#################
+source ~/.config/scripts/aqi.conf
 
 URL="https://airapi.airly.eu/v2/measurements/installation?installationId=$SENSOR_ID"
 API_KEY_PREFIX="apikey: "
 API_KEY_HEADER="$API_KEY_PREFIX$API_KEY"
 TYPE="Accept: application/json"
-
-AQI=$(curl -X GET \
+RESPONSE=$(curl -X GET \
     --silent \
     --header "$TYPE" \
     --header "$API_KEY_HEADER" \
-    "$URL" \
-    | jq .current.indexes | jq '.[0]'.value | cut -f1 -d"." | cut -f1 -d",")
+    "$URL")
 
-MSG="Unknown"
+AQI=$(echo $RESPONSE | jq .current.indexes | jq '.[0]'.value | cut -f1 -d"." | cut -f1 -d",")
+ADVICE=$(echo $RESPONSE | jq .current.indexes | jq '.[0]'.advice | cut -d "\"" -f 2)
+DESC=$(echo $RESPONSE | jq .current.indexes | jq '.[0]'.description | cut -d "\"" -f 2)
 
-case 1 in
-  $(($AQI <= 25)))  MSG="Great!";;
-  $(($AQI <= 50)))  MSG="Good!";;
-  $(($AQI <= 75)))  MSG="Medium";;
-  $(($AQI <= 100))) MSG="Bad";;
-  $(($AQI >= 101))) MSG="Very Bad";;
-esac
 
 if [ "$AQI" == "null" ]; then
-    echo "AQI sensor is off"
+    echo "AQI ?"
 else
-    echo "AQI $AQI ($MSG)"
+    echo "AQI $AQI"
+fi
+
+echo "---"
+
+if [ "$AQI" == "null" ]; then
+    echo "API rate limit exceeded or sensor is off"
+else
+  echo "measurement details:"
+
+  for i in {0..5}
+  do
+    if [ $i -lt 3 ]; then
+        tabs='\t\t\t'
+    elif [ $i -lt 5 ]; then
+        tabs='\t\t'
+    else
+        tabs='\t'
+    fi
+    echo -e $(echo $RESPONSE | jq .current.values | jq ".[$i]".name | cut -d "\"" -f 2) \
+            $tabs \
+            $(echo $RESPONSE | jq .current.values | jq ".[$i]".value)
+  done
+
+  echo $DESC
+  echo $ADVICE
 fi
