@@ -1,6 +1,6 @@
-airly.sh
-=========
-bash script for reading AQI (Air Quality Index) from the airly.eu sensors for BitBar (macOS) and Argos (Linux) top panels
+airly-statusbar
+===============
+bash script for reading AQI (Air Quality Index) from the airly.eu sensors for BitBar (macOS) and Argos (Linux) statusbar
 
 ![screenshot](screenshot.png)
 
