@@ -2,6 +2,8 @@ airly-statusbar
 ===============
 bash script for reading AQI (Air Quality Index) from the airly.eu sensors for BitBar (macOS) and Argos (Linux + Gnome) statusbar
 
+**please note**: I'm no longer maintain this repo. You can find the most recent version of this script here: https://github.com/pwittchen/dotfiles/blob/master/.argos/00_aqi.300s.sh in my [dotfiles](https://github.com/pwittchen/dotfiles)
+
 ![screenshot](screenshot.png)
 
 Installation
